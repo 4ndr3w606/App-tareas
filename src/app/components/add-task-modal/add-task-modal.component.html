@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-title>Nueva Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [disabled]="!title.trim()" strong="true">Guardar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item class="ion-margin-bottom">
+    <ion-input 
+      label="Título de la tarea" 
+      labelPlacement="floating" 
+      type="text" 
+      [(ngModel)]="title" 
+      placeholder="Ej. Entregar reporte de pruebas">
+    </ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-bottom">
+    <ion-select label="Categoría" [(ngModel)]="category">
+      <ion-select-option value="Estudio">Estudio</ion-select-option>
+      <ion-select-option value="Proyecto">Proyecto</ion-select-option>
+      <ion-select-option value="Rutina">Rutina</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="ion-margin-bottom">
+    <ion-select label="Prioridad" [(ngModel)]="priority">
+      <ion-select-option value="baja">Baja</ion-select-option>
+      <ion-select-option value="media">Media</ion-select-option>
+      <ion-select-option value="alta">Alta</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha límite</ion-label>
+    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime" presentation="date" [(ngModel)]="dueDate"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+</ion-content>

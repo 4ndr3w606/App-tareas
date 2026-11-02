@@ -1,0 +1,11 @@
+.completed-task {
+  h2 {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+}
+
+ion-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
