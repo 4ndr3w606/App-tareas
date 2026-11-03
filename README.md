@@ -14,8 +14,8 @@ Aplicación móvil nativa para Android desarrollada con Ionic Framework, Angular
 1)	 Verificar el entorno
 Asegúrate de contar con las siguientes Node.js, dependencias npm, Ionic CLI y el entorno de desarrollo Android Studio:
 ```
-node -v      # Recomendado: v18.x o v20.x
-npm -v        # Recomendado: v9.x o superior 
+node -v      // Recomendado: v18.x o v20.x
+npm -v        // Recomendado: v9.x o superior 
 ionic –version
 ```
 Si no tienes Ionic CLI instalado globalmente:
