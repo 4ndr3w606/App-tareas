@@ -2,7 +2,7 @@
 Aplicación móvil nativa para Android desarrollada con Ionic Framework, Angular y TypeScript, empaquetada mediante Capacitor. Este proyecto permite la creación, gestión, filtrado y almacenamiento local de tareas y hábitos diarios.
 
  ### Tecnologías Utilizadas
- - `Funcionalidad 1`: descripción de la funcionalidad 1-
+- `Funcionalidad 1`: descripción de la funcionalidad 1-
 - `Framework`: Ionic Framework (v7+)-
 - `Core`: Angular (Componentes Standalone)-
 - `Lenguaje`: TypeScript-
@@ -68,20 +68,22 @@ npx cap open android
 ```
 ## Generación del APK Debug e Instalación
 
--1.	En Android Studio, espera a que Gradle finalice la indexación del proyecto.-
--2.	En la barra de menú superior, selecciona:-
--Build $\rightarrow$ Build Bundle(s) / APK(s) $\rightarrow$ Build APK(s).-
+- 1.	En Android Studio, espera a que Gradle finalice la indexación del proyecto.-
+- 2.	En la barra de menú superior, selecciona:-
+```
+-Build --> Generate App Bundles or APKs --> Generate APKs.-
+```
 -3.	Al finalizar la compilación, la notificación te indicará la ruta donde se generó el archivo:-
 
-Plaintext
+```
 android/app/build/outputs/apk/debug/app-debug.apk
-
+```
 4.	Instalación: Transfiere el archivo app-debug.apk a tu dispositivo Android propio u 
 homologado, habilita los permisos de instalación desde fuentes desconocidas si el sistema
 lo solicita y ejecuta la aplicación.
 
 ## Estructura del Proyecto
-Plaintext
+```
 gestor-tareas/
 ├── android/                   # Proyecto nativo Android (conservado en control de versiones)
 ├── src/
@@ -93,7 +95,7 @@ gestor-tareas/
 ├── capacitor.config.ts        # Configuración principal de Capacitor
 ├── ionic.config.json          # Configuración del CLI de Ionic
 └── README.md                  # Documento del proyecto
-
+```
 
 
 
