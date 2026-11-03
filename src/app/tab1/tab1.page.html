@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Mis Tareas</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedFilter">
+      <ion-segment-button value="todas">
+        <ion-label>Todas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="pendientes">
+        <ion-label>Pendientes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="completadas">
+        <ion-label>Completadas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-item-sliding *ngFor="let task of filteredTasks">
+      <ion-item>
+        <ion-checkbox 
+          slot="start" 
+          [checked]="task.completed" 
+          (ionChange)="toggleTask(task.id)">
+        </ion-checkbox>
+
+        <ion-label [class.completed-task]="task.completed">
+          <h2>{{ task.title }}</h2>
+          <p>{{ task.category }} • {{ task.dueDate | date:'shortDate' }}</p>
+        </ion-label>
+
+        <ion-badge 
+          slot="end" 
+          [color]="task.priority === 'alta' ? 'danger' : task.priority === 'media' ? 'warning' : 'medium'">
+          {{ task.priority | uppercase }}
+        </ion-badge>
+      </ion-item>
+
+      <ion-item-options slot="end">
+        <ion-item-option color="danger" (click)="removeTask(task.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Botón Flotante para Agregar -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openAddTaskModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
